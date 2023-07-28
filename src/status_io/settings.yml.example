@@ -1,0 +1,4 @@
+parameters:
+  "Status Page ID": YOUR_STATUSPAGE_ID
+  "API ID": YOUR_STATUS_IO_API_ID
+  "API Key": YOUR_STATUS_IO_API_KEY
