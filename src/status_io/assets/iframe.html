@@ -2,17 +2,49 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!--   See Using Zendesk Garden:
-    https://developer.zendesk.com/apps/docs/developer-guide/setup#using-zendesk-garden
-    https://garden.zendesk.com/css-components/bedrock/
-    https://garden.zendesk.com/css-components/utilities/typography/
-   -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
 </head>
 <body>
   <div id="app">
     <button id="create-incident">Create Incident</button>
     <button id="resolve-incident">Resolve Incident</button>
+
+    <div id="incident-form" style="display: none;">
+      <h2>Create Incident</h2>
+      <form>
+        <label for="incident-name">Incident Name:</label>
+        <input type="text" id="incident-name" name="incident-name">
+
+        <label for="incident-details">Incident Details:</label>
+        <textarea id="incident-details" name="incident-details"></textarea>
+
+        <label for="infrastructure-affected">Infrastructure Affected:</label>
+        <select id="infrastructure-affected" name="infrastructure-affected"></select>
+
+        <label for="current-status">Current Status:</label>
+        <select id="current-status" name="current-status">
+          <option value="100">Operational</option>
+          <option value="200">Maintenance</option>
+          <option value="300">Degraded Performance</option>
+          <option value="400">Partial Service Disruption</option>
+          <option value="500">Service Disruption</option>
+          <option value="600">Security Event</option>
+        </select>
+
+        <label for="current-state">Current State:</label>
+        <select id="current-state" name="current-state">
+          <option value="100">Investigating</option>
+          <option value="200">Identified</option>
+          <option value="300">Monitoring</option>
+          <option value="400">Resolved</option>
+        </select>
+
+        <label for="social">Post to Social:</label>
+        <input type="checkbox" id="social" name="social">
+        
+        <input type="submit" value="Submit">
+      </form>
+    </div>
   </div>
   <footer>
     <a href="https://github.com/sbarbett" target="_blank">Report bugs</a>

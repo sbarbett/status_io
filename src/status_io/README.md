@@ -1,14 +1,13 @@
-# App name
+# status_io
 
-[brief description of the app]
+Creating and resolving incidents from within Zendesk.
 
-### The following information is displayed:
+### To do:
 
-* info1
-* info2
-* info3
-
-Please submit bug reports to [Insert Link](). Pull requests are welcome.
-
-### Screenshot(s):
-[put your screenshots down here.]
+* Move the create incident form to a pop-out modal
+* Add the remaining "notify" options
+* Store the resulting incident ID within the ticket somewhere
+* If an incident is associated with the ticket, display that info within the app panel
+* Add a way to update and resolve the existing incident from Zendesk
+* If the ticket is resolved, auto-resolve the incident?
+* Incident templates?
