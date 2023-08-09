@@ -3,52 +3,47 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zendeskgarden/css-buttons/dist/index.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zendeskgarden/css-forms/dist/index.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .c-btn {
+      /* Change the padding to adjust the whitespace inside the button */
+      padding: 2px 4px; /* top/bottom padding and left/right padding */
+
+      /* Change the font size */
+      font-size: 11px;
+
+      /* Add margin to create space between buttons */
+      margin-right: 5px;
+
+      /* Reduce the overall size of the button */
+      height: 50% !important;
+    }
+
+    .my-link {
+      padding: 4px; /* Adjust the padding as needed */
+      color: #009688; /* Change the color of the link text */
+      text-decoration: none; /* Remove the underline */
+      font-size: 9px;
+    }
+
+    .my-link:hover {
+      color: #004d40; /* Change the color when the link is hovered over */
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <button id="create-incident">Create Incident</button>
-    <button id="resolve-incident">Resolve Incident</button>
-
-    <div id="incident-form" style="display: none;">
-      <h2>Create Incident</h2>
-      <form>
-        <label for="incident-name">Incident Name:</label>
-        <input type="text" id="incident-name" name="incident-name">
-
-        <label for="incident-details">Incident Details:</label>
-        <textarea id="incident-details" name="incident-details"></textarea>
-
-        <label for="infrastructure-affected">Infrastructure Affected:</label>
-        <select id="infrastructure-affected" name="infrastructure-affected"></select>
-
-        <label for="current-status">Current Status:</label>
-        <select id="current-status" name="current-status">
-          <option value="100">Operational</option>
-          <option value="200">Maintenance</option>
-          <option value="300">Degraded Performance</option>
-          <option value="400">Partial Service Disruption</option>
-          <option value="500">Service Disruption</option>
-          <option value="600">Security Event</option>
-        </select>
-
-        <label for="current-state">Current State:</label>
-        <select id="current-state" name="current-state">
-          <option value="100">Investigating</option>
-          <option value="200">Identified</option>
-          <option value="300">Monitoring</option>
-          <option value="400">Resolved</option>
-        </select>
-
-        <label for="social">Post to Social:</label>
-        <input type="checkbox" id="social" name="social">
-        
-        <input type="submit" value="Submit">
-      </form>
-    </div>
+    <button id="create-incident" class="c-btn c-btn--secondary">Create Incident</button>
+    <button id="resolve-incident" class="c-btn c-btn--secondary">Resolve Incident</button>
   </div>
   <footer>
-    <a href="https://github.com/sbarbett" target="_blank">Report bugs</a>
+    <a href="https://github.com/sbarbett" class="my-link" target="_blank">Report bugs</a>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
   <script src="main.js"></script>
 </body>

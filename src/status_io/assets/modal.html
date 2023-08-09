@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zendeskgarden/css-buttons/dist/index.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@zendeskgarden/css-forms/dist/index.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .c-btn {
+      /* Change the padding to adjust the whitespace inside the button */
+      padding: 2px 4px; /* top/bottom padding and left/right padding */
+
+      /* Change the font size */
+      font-size: 11px;
+
+      /* Add margin to create space between buttons */
+      margin-right: 5px;
+
+      /* Reduce the overall size of the button */
+      height: 50% !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form id="incident-form">
+      <div class="c-txt">
+        <label for="incident-name" class="c-txt__label">Incident Name</label><br>
+        <input style="width: 80%;" type="text" id="incident-name" class="c-txt__input">
+      </div>
+      <div class="c-txt">
+        <label for="incident-details" class="c-txt__label">Incident Details</label><br>
+        <textarea style="width: 80%;" id="incident-details" class="c-txt__input"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="infrastructure-affected" class="c-txt__label">Infrastructure Affected</label><br>
+        <select style="width: 80%;" id="infrastructure-affected" class="c-txt__input">
+          <!-- Options will be added dynamically here -->
+        </select>
+      </div><br>
+      <button id="create-incident-modal" class="c-btn c-btn--secondary">Create Incident</button>
+    </form>
+  </div>
+  <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>
