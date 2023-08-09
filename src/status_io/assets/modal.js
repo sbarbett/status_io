@@ -14,7 +14,7 @@
         'x-api-id': metadata.settings['API ID']
       }
 
-      var options = {
+      var componentList = {
         url: `https://api.status.io/v2/component/list/${metadata.settings['Status Page ID']}`,
         type: 'GET',
         contentType: 'application/json',
@@ -22,7 +22,7 @@
         headers: headers
       }
 
-      client.request(options).then(function(response) {
+      client.request(componentList).then(function(response) {
         var infrastructureSelect = document.getElementById('infrastructure-affected');
         response.result.forEach(function(component) {
           component.containers.forEach(function(container) {
@@ -41,11 +41,12 @@
         // Fetch ticket data
         pc.get('ticket').then(function(data) {
           var ticketId = data.ticket.id;
+          console.log('Ticket ID:', ticketId)
           var incidentName = document.getElementById('incident-name').value;
           var incidentDetails = document.getElementById('incident-details').value;
           var infrastructureAffected = document.getElementById('infrastructure-affected').value;
 
-          var options = {
+          var incidentCreate = {
             url: 'https://api.status.io/v2/incident/create',
             type: 'POST',
             contentType: 'application/json',
@@ -61,8 +62,9 @@
               social: "0"
             })
           }
+          console.log(incidentCreate)
 
-          pc.request(options).then(function(response) {
+          client.request(incidentCreate).then(function(response) {
             console.log('Response:', response);
             //client.invoke('instances.destroy');
           }).catch(function(error) {
@@ -70,6 +72,7 @@
           });
         });
       });
+
     });
   }
 
